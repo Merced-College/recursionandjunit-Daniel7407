@@ -21,4 +21,14 @@ public class RecursionTests{
         assertEquals(Main.countHi("ajlskd"), 0); 
 
     }
+
+    @Test //Tests countHi2 function
+    public void test3(){
+        assertEquals(Main.countHi2("ahixhi"), 1); 
+        assertEquals(Main.countHi2("ahibhi"), 2); 
+        assertEquals(Main.countHi2("xhixhi"), 0); 
+        assertEquals(Main.countHi2("xxhijqkehi;k"), 1); 
+        assertEquals(Main.countHi2("qweoiutpqw"), 0);
+        assertEquals(Main.countHi2("a"), 0); 
+    }
 }

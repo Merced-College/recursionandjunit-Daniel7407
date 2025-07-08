@@ -36,9 +36,26 @@ class Main{
         }
 
         if(str.substring(0, 2).equals("hi")){
-            return 1 + countHi(str.substring(1)); // has 'hi'
+            return 1 + countHi(str.substring(2)); // has 'hi'
         } else {
             return countHi(str.substring(1)); // doesn't have 'hi'
+        }
+    }
+
+    // Problem 3
+
+    public static int countHi2(String str){
+        // base case: string smaller than 3 char
+        if (str.length() < 2){
+            return 0; 
+        }
+
+        if (str.length() >= 3 && str.charAt(0) == 'x' && str.substring(1, 3).equals("hi")){
+            return countHi2(str.substring(3));
+        } else if (str.substring(0, 2).equals("hi")){
+            return 1 + countHi2(str.substring(2)); 
+        } else {
+            return countHi2(str.substring(1));
         }
     }
 
