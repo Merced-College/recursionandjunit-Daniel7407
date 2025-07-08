@@ -74,5 +74,20 @@ class Main{
         }
     }
 
+    // Problem 5
+
+    public static String stringClean(String str){
+        // base case: str less than 2 chars
+        if (str.length() < 2){
+            return str; 
+        }
+
+        if (str.charAt(0) == str.charAt(1)){
+            return stringClean(str.substring(1)); // Found repeating char
+        } else { 
+            return str.substring(0, 1) + stringClean(str.substring(1)); // Current char is not repeating
+        }
+    }
+
 
 }

@@ -33,12 +33,20 @@ public class RecursionTests{
     }
 
     @Test // Tests strCount function
-
     public void test4(){
         assertEquals(Main.strCount("catcowcat", "cat"), 2); 
         assertEquals(Main.strCount("catcowcat", "cow"), 1); 
         assertEquals(Main.strCount("catcowcat", "dog"), 0); 
         assertEquals(Main.strCount("tatat", "tat"), 1);
         assertEquals(Main.strCount("dog", "alligator"), 0); 
+    }
+
+    @Test // Tests stringClean function
+    public void test5(){
+        assertEquals(Main.stringClean("yyzzza"), "yza");
+        assertEquals(Main.stringClean("abbbcdd"), "abcd"); 
+        assertEquals(Main.stringClean("Hello"), "Helo"); 
+        assertEquals(Main.stringClean("qwerty"), "qwerty");
+        assertEquals(Main.stringClean("woooooooooooooooooo"), "wo"); 
     }
 }
