@@ -36,9 +36,9 @@ class Main{
         }
 
         if(str.substring(0, 2).equals("hi")){
-            return 1 + countHi(str.substring(2)); // has 'hi'
+            return 1 + countHi(str.substring(2)); // current range has 'hi'
         } else {
-            return countHi(str.substring(1)); // doesn't have 'hi'
+            return countHi(str.substring(1)); // current range doesn't have 'hi'
         }
     }
 
@@ -51,11 +51,26 @@ class Main{
         }
 
         if (str.length() >= 3 && str.charAt(0) == 'x' && str.substring(1, 3).equals("hi")){
-            return countHi2(str.substring(3));
+            return countHi2(str.substring(3)); // x before hi
         } else if (str.substring(0, 2).equals("hi")){
-            return 1 + countHi2(str.substring(2)); 
+            return 1 + countHi2(str.substring(2)); // hi with no preceding x
         } else {
-            return countHi2(str.substring(1));
+            return countHi2(str.substring(1)); // no hi in current range
+        }
+    }
+
+    // Problem 4
+
+    public static int strCount(String str, String sub){
+        // base case: str smaller than sub
+        if (str.length() < sub.length()){
+            return 0; 
+        }
+
+        if (str.substring(0, sub.length()).equals(sub)){
+            return 1 + strCount(str.substring(sub.length()), sub); // found sub in str
+        } else {
+            return strCount(str.substring(1), sub); // did not find sub in current range
         }
     }
 

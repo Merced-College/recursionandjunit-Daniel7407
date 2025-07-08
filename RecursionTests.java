@@ -22,7 +22,7 @@ public class RecursionTests{
 
     }
 
-    @Test //Tests countHi2 function
+    @Test // Tests countHi2 function
     public void test3(){
         assertEquals(Main.countHi2("ahixhi"), 1); 
         assertEquals(Main.countHi2("ahibhi"), 2); 
@@ -30,5 +30,15 @@ public class RecursionTests{
         assertEquals(Main.countHi2("xxhijqkehi;k"), 1); 
         assertEquals(Main.countHi2("qweoiutpqw"), 0);
         assertEquals(Main.countHi2("a"), 0); 
+    }
+
+    @Test // Tests strCount function
+
+    public void test4(){
+        assertEquals(Main.strCount("catcowcat", "cat"), 2); 
+        assertEquals(Main.strCount("catcowcat", "cow"), 1); 
+        assertEquals(Main.strCount("catcowcat", "dog"), 0); 
+        assertEquals(Main.strCount("tatat", "tat"), 1);
+        assertEquals(Main.strCount("dog", "alligator"), 0); 
     }
 }
